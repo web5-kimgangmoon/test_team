@@ -50,7 +50,7 @@ jobs:
           mysql -u ${{ secrets.MYSQL_USER }} -p${{ secrets.MYSQL_PASSWORD }} -e "SHOW DATABASES;"`
 
 jobs:
-  test_node:
+  test_mongod:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repository
