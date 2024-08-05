@@ -202,7 +202,7 @@ jobs:
 
           npm install -g pm2
           pm2 stop all
-          pm2 start /var/www/backend/index.js --name backend
+          pm2 start /var/www/backend/index.js --name backend'
 
 # echo "PORT=3080" > .env
 # ehco "TEST_KEY=publicsss" >> .env
