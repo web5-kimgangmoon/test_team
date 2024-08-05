@@ -42,7 +42,7 @@ jobs:
       - name: check mysql
         run: |
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
-          sudo service mysql start'
+          sudo service mysql status'
 
       - name: test mysql
         run: |
