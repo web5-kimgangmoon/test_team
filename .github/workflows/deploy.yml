@@ -75,6 +75,6 @@ jobs:
 
       - name: test mongod user
         run: |
-          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} `
+          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
           mongosh -u ${{ secrets.MONGO_USER }} -p ${{ secrets.MONGO_PASSWORD }} \
-          --authenticationDatabase admin -eval "db.adminCommand({ listDatabases:1 })"`
+          --authenticationDatabase admin -eval "db.adminCommand({ listDatabases:1 })"'
