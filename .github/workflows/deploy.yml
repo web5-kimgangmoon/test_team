@@ -186,4 +186,7 @@ jobs:
           nvm use --lts
           cd  /var/www/backend
           npm i --production
-          echo "PORT=3080" > .env'
+          ${{ secrets.SERVER_ENV }}'
+
+# echo "PORT=3080" > .env
+# ehco "TEST_KEY=publicsss" >> .env
