@@ -142,7 +142,7 @@ jobs:
     needs:
       - test_node
       - test_mysql
-      - test_mongo
+      - test_mongod
     steps:
       - name: checkout repository
         uses: actions/checkout@v4
