@@ -9,7 +9,7 @@ listen [::]:80 default_server;
 
     location / {
         root /var/www/front;
-        try_files $url /index.html;
+        try_files $uri /index.html;
     }
 
     location /api {

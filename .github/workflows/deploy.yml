@@ -185,4 +185,5 @@ jobs:
           nvm -v
           nvm use --lts
           cd  /var/www/backend
-          npm i --production'
+          npm i --production
+          echo "PORT=3080" > .env'
