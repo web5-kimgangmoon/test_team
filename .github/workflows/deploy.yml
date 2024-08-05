@@ -34,4 +34,7 @@ jobs:
           exit 1
           }
 
-          nvm -v`
+          nvm -v
+          nvm use --lts
+          node -v
+          npm -v`
