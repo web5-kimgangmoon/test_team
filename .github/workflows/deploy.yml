@@ -184,9 +184,26 @@ jobs:
 
           nvm -v
           nvm use --lts
+
           cd  /var/www/backend
           npm i --production
           ${{ secrets.SERVER_ENV }}'
+
+      - name: Start Server
+        run: |
+          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" || {
+          echo "nvm.sh not found"
+          exit 1
+          }
+
+          nvm use --lts
+
+          pm2 stop all
+          pm2 start /var/www/backend/index.js --name backend
+          pm2 save
+          pm2 startup`
 
 # echo "PORT=3080" > .env
 # ehco "TEST_KEY=publicsss" >> .env
